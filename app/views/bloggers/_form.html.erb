@@ -1,0 +1,49 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+ <p><%= error %></p> 
+  <% end %>
+<% end %>
+
+
+<%= form_for @blogger do |f| %>
+
+<%= f.label :name, "Enter your name" %>
+<%= f.text_field :name %>
+<br><br>
+<%= f.label :bio, "Enter your bio" %>
+<%= f.text_area :bio %>
+<br><br>
+<%= f.label :age, "Enter your age" %>
+<%= f.number_field :age %>
+<br><br>
+<%= f.submit %>
+  
+<% end %>
+
+
+
+
+<%#   create_table "bloggers", force: :cascade do |t| %>
+<%#     t.string "name" %>
+    <%# t.string "bio" %>
+    <%# t.integer "age" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  <%# end %>
+
+  <%# create_table "destinations", force: :cascade do |t| %>
+<%#     t.string "name" %>
+    <%# t.string "country" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  <%# end %>
+
+  <%# create_table "posts", force: :cascade do |t| %>
+    <%# t.string "title" %>
+    <%# t.text "content" %>
+    <%# t.integer "likes" %>
+    <%# t.integer "blogger_id" %>
+    <%# t.integer "destination_id" %>
+    <%# t.datetime "created_at", null: false %>
+    <%# t.datetime "updated_at", null: false %>
+  <%# end %>

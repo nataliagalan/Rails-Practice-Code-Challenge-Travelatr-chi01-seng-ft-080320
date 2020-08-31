@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroying old data"
+Post.destroy_all
+Blogger.destroy_all
+Destination.destroy_all
 
-
+puts "seeding"
 30.times do 
   Destination.create({
     name: Faker::GameOfThrones.city,
@@ -31,4 +35,7 @@ end
       destination: Destination.all.sample
     })
   end
+  
 end
+
+puts "done"

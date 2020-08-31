@@ -1,0 +1,11 @@
+<h1>My post</h1>
+
+<h4>Title: <%= @post.title %></h4>
+<h4>Author: <%= link_to @post.blogger.name.capitalize, blogger_path(@post.blogger) %></h4>
+<h4>Destination: <%= link_to @post.destination.name.capitalize, destination_path(@post.destination) %></h4>
+<p><%= @post.content %></p>
+
+<%= button_to "Like #{@post.likes}", like_path(@post), method: :get %>
+<%# @post.increase_by_one %>
+
+  
